@@ -1,15 +1,20 @@
-//@ts-ignore
-import Azure from "@azure/cognitiveservices-textanalytics/dist/cognitiveservices-textanalytics.js";
+// API key and end point.
+const api = "647db05f05694c04a9e0677ec1ea1c3c"
+const endpoint = "https://groupm-cognitive-services-2.cognitiveservices.azure.com/"
 
-const sentence: string = "This sucks."
-
+// Import our TextAnalyticsService that talks to our API.
 import TextAnalyticsService from "./TextAnalyticsService";
 
-const api = "6b7b6fb79fc04af690a3eb603d1362f5"
-const endpoint = "https://groupm-cognitive-service.cognitiveservices.azure.com/"
-
+// Creates new instance of our Service with our API key and end point.
 const textAnalysis = new TextAnalyticsService( api, endpoint )
 
-const options: string[] = [sentence]
+// Texts to me analyzed - to be replaced with search results from Bing Search.
+const texts: string[] = [
+    "I am so happy to be here",
+    "This all sucks and you all suck and I cry",
+    "My dinner table is made from wood"
+    ]
 
-textAnalysis.analyzeText(options);
+// Calls the analyzing functions.
+// textAnalysis.analyzeTextSentiments(texts);
+textAnalysis.analyzeTextKeyEntities(texts);

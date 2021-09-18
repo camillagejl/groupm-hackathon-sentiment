@@ -44,11 +44,11 @@ var TextAnalyticsService = /** @class */ (function () {
         this.cognitiveServiceCredentials = new ai_text_analytics_1.AzureKeyCredential(textAnalyticsKey);
         this.client = new ai_text_analytics_1.TextAnalyticsClient(this.textAnalyticsEndPoint, new ai_text_analytics_1.AzureKeyCredential(this.textAnalyticsKey));
     }
-    TextAnalyticsService.prototype.analyzeText = function (options) {
+    TextAnalyticsService.prototype.analyzeTextSentiments = function (texts) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 this.client
-                    .analyzeSentiment(options)
+                    .analyzeSentiment(texts)
                     .then(function (result) {
                     console.log("The result is:");
                     console.log(result);
@@ -65,6 +65,27 @@ var TextAnalyticsService = /** @class */ (function () {
                     //         `Transactions Count: ${document.statistics!.transactionsCount}`
                     //     );
                     // });
+                })["catch"](function (err) {
+                    console.log("An error occurred:");
+                    console.error(err);
+                });
+                return [2 /*return*/];
+            });
+        });
+    };
+    TextAnalyticsService.prototype.analyzeTextKeyEntities = function (texts) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.client
+                    .recognizeEntities(texts, "en")
+                    .then(function (result) {
+                    console.log("The result is:");
+                    console.log(result);
+                    result.forEach(function (result) {
+                        console.log(result);
+                        // console.log(`Id: ${result.id}`);
+                        // console.log("Entities:");
+                    });
                 })["catch"](function (err) {
                     console.log("An error occurred:");
                     console.error(err);
