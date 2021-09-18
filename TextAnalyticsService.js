@@ -52,19 +52,6 @@ var TextAnalyticsService = /** @class */ (function () {
                     .then(function (result) {
                     console.log("The result is:");
                     console.log(result);
-                    // result.documents!.forEach(document => {
-                    //     console.log(`Id: ${document.id}`);
-                    //     console.log("Detected Languages:");
-                    //     document.detectedLanguages!.forEach(dl => {
-                    //         console.log(dl.name);
-                    //     });
-                    //     console.log(
-                    //         `Characters Count: ${document.statistics!.charactersCount}`
-                    //     );
-                    //     console.log(
-                    //         `Transactions Count: ${document.statistics!.transactionsCount}`
-                    //     );
-                    // });
                 })["catch"](function (err) {
                     console.log("An error occurred:");
                     console.error(err);
@@ -83,8 +70,6 @@ var TextAnalyticsService = /** @class */ (function () {
                     console.log(result);
                     result.forEach(function (result) {
                         console.log(result);
-                        // console.log(`Id: ${result.id}`);
-                        // console.log("Entities:");
                     });
                 })["catch"](function (err) {
                     console.log("An error occurred:");
