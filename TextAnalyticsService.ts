@@ -48,4 +48,36 @@ export default class TextAnalyticsService {
                 console.error(err);
             });
     }
+
+    public async analyzeTextKeyPhrases(texts: string[]): Promise<void> {
+        this.client
+            .extractKeyPhrases(texts, "en")
+            .then(result => {
+                console.log("The result is:");
+                console.log(result);
+                result.forEach(result => {
+                    console.log(result);
+                });
+            })
+            .catch(err => {
+                console.log("An error occurred:");
+                console.error(err);
+            });
+    }
+
+    public async analyzeTextLanguage(texts: string[]): Promise<void> {
+        this.client
+            .detectLanguage(texts, "none")
+            .then(result => {
+                console.log("The result is:");
+                console.log(result);
+                result.forEach(result => {
+                    console.log(result);
+                });
+            })
+            .catch(err => {
+                console.log("An error occurred:");
+                console.error(err);
+            });
+    }
 }

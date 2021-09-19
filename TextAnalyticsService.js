@@ -79,6 +79,44 @@ var TextAnalyticsService = /** @class */ (function () {
             });
         });
     };
+    TextAnalyticsService.prototype.analyzeTextKeyPhrases = function (texts) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.client
+                    .extractKeyPhrases(texts, "en")
+                    .then(function (result) {
+                    console.log("The result is:");
+                    console.log(result);
+                    result.forEach(function (result) {
+                        console.log(result);
+                    });
+                })["catch"](function (err) {
+                    console.log("An error occurred:");
+                    console.error(err);
+                });
+                return [2 /*return*/];
+            });
+        });
+    };
+    TextAnalyticsService.prototype.analyzeTextLanguage = function (texts) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.client
+                    .detectLanguage(texts, "none")
+                    .then(function (result) {
+                    console.log("The result is:");
+                    console.log(result);
+                    result.forEach(function (result) {
+                        console.log(result);
+                    });
+                })["catch"](function (err) {
+                    console.log("An error occurred:");
+                    console.error(err);
+                });
+                return [2 /*return*/];
+            });
+        });
+    };
     return TextAnalyticsService;
 }());
 exports["default"] = TextAnalyticsService;
