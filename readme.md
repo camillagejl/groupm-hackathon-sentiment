@@ -2,7 +2,7 @@
 
 ## Article
 
-| text_id  | sentiment_positive  |  sentiment_neutral | setiment_negative  |  sentiment_score  |  language_name  |  iso6391Name  |  language_confidence  
+| text_id  | sentiment_positive  |  sentiment_neutral | setiment_negative  |  sentiment_score  |  language_name  |  iso6391Name  |  language_confidence | 
 |---|---|---|---|---|---|---|---|
 | int  | float  | float  | float  | string  | string | string | float |
 | 1  | 0.36  | 0.13 | 0.51  | "mixed"  | "English | "en" | 0.99 |

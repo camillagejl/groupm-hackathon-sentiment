@@ -20,12 +20,13 @@ export default class TextAnalyticsService {
         this.client = new TextAnalyticsClient(this.textAnalyticsEndPoint, new AzureKeyCredential(this.textAnalyticsKey));
     }
 
-    public async analyzeTextSentiments(texts: string[]): Promise<void> {
-        this.client
+    public async analyzeTextSentiments(texts: string[]): Promise<any> {
+        return await this.client
             .analyzeSentiment(texts)
             .then(result => {
-                console.log("The result is:");
-                console.log(result);
+                // console.log("The result is:");
+                // console.log(result);
+                return result;
             })
             .catch(err => {
                 console.log("An error occurred:");
@@ -33,15 +34,16 @@ export default class TextAnalyticsService {
             });
     }
 
-    public async analyzeTextKeyEntities(texts: string[]): Promise<void> {
-        this.client
+    public async analyzeTextKeyEntities(texts: string[]): Promise<any> {
+        return await this.client
             .recognizeEntities(texts, "en")
             .then(result => {
-                console.log("The result is:");
-                console.log(result);
-                result.forEach(result => {
-                    console.log(result);
-                });
+                // console.log("The result is:");
+                // console.log(result);
+                // result.forEach(result => {
+                //     console.log(result);
+                // });
+                return result;
             })
             .catch(err => {
                 console.log("An error occurred:");
@@ -49,15 +51,16 @@ export default class TextAnalyticsService {
             });
     }
 
-    public async analyzeTextKeyPhrases(texts: string[]): Promise<void> {
-        this.client
+    public async analyzeTextKeyPhrases(texts: string[]): Promise<any> {
+        return await this.client
             .extractKeyPhrases(texts, "en")
             .then(result => {
-                console.log("The result is:");
-                console.log(result);
-                result.forEach(result => {
-                    console.log(result);
-                });
+                // console.log("The result is:");
+                // console.log(result);
+                // result.forEach(result => {
+                //     console.log(result);
+                // });
+                return result;
             })
             .catch(err => {
                 console.log("An error occurred:");
@@ -65,15 +68,16 @@ export default class TextAnalyticsService {
             });
     }
 
-    public async analyzeTextLanguage(texts: string[]): Promise<void> {
-        this.client
+    public async analyzeTextLanguage(texts: string[]): Promise<any> {
+        return await this.client
             .detectLanguage(texts, "none")
             .then(result => {
-                console.log("The result is:");
-                console.log(result);
-                result.forEach(result => {
-                    console.log(result);
-                });
+                // console.log("The result is:");
+                // console.log(result);
+                // result.forEach(result => {
+                //     console.log(result);
+                // });
+                return result;
             })
             .catch(err => {
                 console.log("An error occurred:");

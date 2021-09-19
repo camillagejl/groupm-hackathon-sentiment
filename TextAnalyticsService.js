@@ -47,73 +47,85 @@ var TextAnalyticsService = /** @class */ (function () {
     TextAnalyticsService.prototype.analyzeTextSentiments = function (texts) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                this.client
-                    .analyzeSentiment(texts)
-                    .then(function (result) {
-                    console.log("The result is:");
-                    console.log(result);
-                })["catch"](function (err) {
-                    console.log("An error occurred:");
-                    console.error(err);
-                });
-                return [2 /*return*/];
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.client
+                            .analyzeSentiment(texts)
+                            .then(function (result) {
+                            // console.log("The result is:");
+                            // console.log(result);
+                            return result;
+                        })["catch"](function (err) {
+                            console.log("An error occurred:");
+                            console.error(err);
+                        })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
             });
         });
     };
     TextAnalyticsService.prototype.analyzeTextKeyEntities = function (texts) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                this.client
-                    .recognizeEntities(texts, "en")
-                    .then(function (result) {
-                    console.log("The result is:");
-                    console.log(result);
-                    result.forEach(function (result) {
-                        console.log(result);
-                    });
-                })["catch"](function (err) {
-                    console.log("An error occurred:");
-                    console.error(err);
-                });
-                return [2 /*return*/];
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.client
+                            .recognizeEntities(texts, "en")
+                            .then(function (result) {
+                            // console.log("The result is:");
+                            // console.log(result);
+                            // result.forEach(result => {
+                            //     console.log(result);
+                            // });
+                            return result;
+                        })["catch"](function (err) {
+                            console.log("An error occurred:");
+                            console.error(err);
+                        })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
             });
         });
     };
     TextAnalyticsService.prototype.analyzeTextKeyPhrases = function (texts) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                this.client
-                    .extractKeyPhrases(texts, "en")
-                    .then(function (result) {
-                    console.log("The result is:");
-                    console.log(result);
-                    result.forEach(function (result) {
-                        console.log(result);
-                    });
-                })["catch"](function (err) {
-                    console.log("An error occurred:");
-                    console.error(err);
-                });
-                return [2 /*return*/];
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.client
+                            .extractKeyPhrases(texts, "en")
+                            .then(function (result) {
+                            // console.log("The result is:");
+                            // console.log(result);
+                            // result.forEach(result => {
+                            //     console.log(result);
+                            // });
+                            return result;
+                        })["catch"](function (err) {
+                            console.log("An error occurred:");
+                            console.error(err);
+                        })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
             });
         });
     };
     TextAnalyticsService.prototype.analyzeTextLanguage = function (texts) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                this.client
-                    .detectLanguage(texts, "none")
-                    .then(function (result) {
-                    console.log("The result is:");
-                    console.log(result);
-                    result.forEach(function (result) {
-                        console.log(result);
-                    });
-                })["catch"](function (err) {
-                    console.log("An error occurred:");
-                    console.error(err);
-                });
-                return [2 /*return*/];
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.client
+                            .detectLanguage(texts, "none")
+                            .then(function (result) {
+                            // console.log("The result is:");
+                            // console.log(result);
+                            // result.forEach(result => {
+                            //     console.log(result);
+                            // });
+                            return result;
+                        })["catch"](function (err) {
+                            console.log("An error occurred:");
+                            console.error(err);
+                        })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
             });
         });
     };
