@@ -1,4 +1,5 @@
-import { TextAnalyticsClient, AzureKeyCredential} from "@azure/ai-text-analytics"
+import { TextAnalyticsClient, AzureKeyCredential, AnalyzeSentimentResultArray, AnalyzeSentimentResult} from "@azure/ai-text-analytics"
+import amqp from 'amqplib/callback_api';
 
 export default class TextAnalyticsService {
     textAnalyticsKey: string
@@ -28,7 +29,7 @@ export default class TextAnalyticsService {
                 // console.log(result);
                 return result;
             })
-            .catch(err => {
+            .catch((err:Error) => {
                 console.log("An error occurred:");
                 console.error(err);
             });
@@ -79,7 +80,7 @@ export default class TextAnalyticsService {
                 // });
                 return result;
             })
-            .catch(err => {
+            .catch((err:Error) => {
                 console.log("An error occurred:");
                 console.error(err);
             });

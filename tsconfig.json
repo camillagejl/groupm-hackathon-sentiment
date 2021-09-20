@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [ "esnext" ],
+    "lib": [ "esnext" ,"dom"],
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
     /* Projects */
